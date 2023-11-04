@@ -1171,20 +1171,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &669981409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855969567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fefab20f85eab74cacfe0f102708047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiobj: {fileID: 437559648}
-  makeBig: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,8 +1292,8 @@ GameObject:
   - component: {fileID: 849823002}
   - component: {fileID: 850878606}
   - component: {fileID: 850878609}
-  - component: {fileID: 850878608}
   - component: {fileID: 850878607}
+  - component: {fileID: 850878610}
   m_Layer: 0
   m_Name: Whiskey Bottle 1
   m_TagString: Untagged
@@ -1378,26 +1364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToScale: {fileID: 8616685848251776034}
-  objSize: -10
-  sizeChange: 3
-  scaleUp: 0
-  objMaxSize: {x: 20, y: 20, z: 20}
-  objMinSize: {x: -0.5, y: -0.5, z: -0.5}
-  changeVector: {x: 0, y: 0, z: 0}
---- !u!114 &850878608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848737340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fefab20f85eab74cacfe0f102708047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiobj: {fileID: 437559648}
-  makeBig: 0
 --- !u!65 &850878609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1411,6 +1377,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18753281, y: 0.25270784, z: 0.18137209}
   m_Center: {x: -0.011010776, y: 0.029000431, z: -0.007486552}
+--- !u!114 &850878610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848737340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1d66c5e247fbb4ea79ea11b9ea65df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightAmt: 3
+  mouseoverText: +3 Potion
+  uiCont: {fileID: 101897577}
+  scaleUp: 0
 --- !u!1 &876824840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,8 +4141,8 @@ GameObject:
   - component: {fileID: 1856912749}
   - component: {fileID: 1857973390}
   - component: {fileID: 1857973389}
-  - component: {fileID: 669981409}
   - component: {fileID: 1857973391}
+  - component: {fileID: 1857973392}
   m_Layer: 0
   m_Name: Scale Up Bottle
   m_TagString: Untagged
@@ -4231,12 +4213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToScale: {fileID: 8616685848251776034}
-  objSize: 10
-  sizeChange: 10
-  scaleUp: 1
-  objMaxSize: {x: 10, y: 10, z: 10}
-  objMinSize: {x: 0, y: 0, z: 0}
-  changeVector: {x: 0, y: 0, z: 0}
 --- !u!65 &1857973391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4250,6 +4226,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12051582, y: 0.2273641, z: 0.13590555}
   m_Center: {x: 0.011780739, y: 0.022938952, z: -0.0025608242}
+--- !u!114 &1857973392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855969567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1d66c5e247fbb4ea79ea11b9ea65df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightAmt: 10
+  mouseoverText: +10 Potion
+  uiCont: {fileID: 101897577}
+  scaleUp: 1
 --- !u!43 &1910914896
 Mesh:
   m_ObjectHideFlags: 0
