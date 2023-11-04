@@ -7,6 +7,11 @@
 # Temp
 ########
 /[Aassets]/AssetStore/
+.collabignore
+.vsconfig
+
+
+
 
 /[Ll]ibrary/
 /[Tt]emp/
