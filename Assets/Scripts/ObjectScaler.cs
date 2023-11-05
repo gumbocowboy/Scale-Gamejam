@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectScaler : MonoBehaviour
 {
-    public GameObject objToScale;
+    GameObject objToScale;
 
     
     
@@ -20,8 +20,10 @@ public class ObjectScaler : MonoBehaviour
     float smoothSpeed = 0.3f;
     void Start()
     {
-/*        sizeDiff = new Vector3(sizeChange, sizeChange, sizeChange);
-        Debug.Log(this.gameObject.name + " sizechange is " + sizeChange);*/
+        /*        sizeDiff = new Vector3(sizeChange, sizeChange, sizeChange);
+                Debug.Log(this.gameObject.name + " sizechange is " + sizeChange);*/
+        objToScale = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(objToScale.name);
     }
 
     void Update()
@@ -29,7 +31,7 @@ public class ObjectScaler : MonoBehaviour
     }
 
 
-    public void StartScaling(int scaleAmt, bool scaleUp)
+    public void StartScaling(float scaleAmt, bool scaleUp)
     {
 
         changeVector = new Vector3(scaleAmt,scaleAmt,scaleAmt);
@@ -58,6 +60,7 @@ public class ObjectScaler : MonoBehaviour
 
         objToScale.transform.localScale = targetSize;
         GlobalVars.currentHeight += (int)scaleTo.x;
+        Destroy(this.gameObject);
 
     }
 
@@ -71,6 +74,8 @@ public class ObjectScaler : MonoBehaviour
 
         objToScale.transform.localScale = targetSize;
         GlobalVars.currentHeight -= (int)scaleTo.x;
+        Destroy(this.gameObject);
+
     }
 
 }

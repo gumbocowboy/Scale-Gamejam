@@ -1169,7 +1169,7 @@ Transform:
   - {fileID: 1781317909}
   - {fileID: 1776849133}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1497,7 +1497,7 @@ Transform:
   m_Children:
   - {fileID: 2130844684}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1060039711
 PrefabInstance:
@@ -2030,7 +2030,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1212517078
 Mesh:
@@ -3999,7 +3999,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1855969567
 GameObject:
@@ -4013,7 +4013,6 @@ GameObject:
   - component: {fileID: 1856912749}
   - component: {fileID: 1857973390}
   - component: {fileID: 1857973389}
-  - component: {fileID: 669981409}
   - component: {fileID: 1857973391}
   m_Layer: 0
   m_Name: Scale Up Bottle
@@ -4085,12 +4084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToScale: {fileID: 8616685848251776034}
-  objSize: 10
-  sizeChange: 10
-  scaleUp: 1
-  objMaxSize: {x: 10, y: 10, z: 10}
-  objMinSize: {x: 0, y: 0, z: 0}
-  changeVector: {x: 0, y: 0, z: 0}
 --- !u!65 &1857973391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4433,7 +4426,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -165, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4470,6 +4463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 381861874142854929, guid: 20b14fc0a5670cb41ad2086414b9527d, type: 3}
+      propertyPath: heightAmt
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492105566409215502, guid: 20b14fc0a5670cb41ad2086414b9527d, type: 3}
       propertyPath: objToScale
       value: 
@@ -4630,7 +4627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2636345960963604899, guid: 4fc6c3d12faf76d499b0cdc264939d73, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2636345960963604899, guid: 4fc6c3d12faf76d499b0cdc264939d73, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4731,7 +4728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6321214082147426255, guid: e61079f67d7470b49a0f65e1299afcb1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6321214082147426255, guid: e61079f67d7470b49a0f65e1299afcb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4836,7 +4833,7 @@ PrefabInstance:
       objectReference: {fileID: 4135013736964113790}
     - target: {fileID: 6127967043711524265, guid: 63e284529ae5d274a928e166a45cc279, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6127967043711524265, guid: 63e284529ae5d274a928e166a45cc279, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4913,7 +4910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 512398392135520113, guid: 44475e7f337db594e8bb2c744f2bb8cb, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 512398392135520113, guid: 44475e7f337db594e8bb2c744f2bb8cb, type: 3}
       propertyPath: m_LocalPosition.x

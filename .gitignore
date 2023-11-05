@@ -6,11 +6,11 @@
 #########
 # Temp
 ########
-/[Aassets]/AssetStore/
+/[Aa]ssets/AssetStore/
 .collabignore
 .vsconfig
 
-
+*.meta
 
 
 /[Ll]ibrary/

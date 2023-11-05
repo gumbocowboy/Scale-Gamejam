@@ -8,10 +8,17 @@ using UnityEngine;
 /// </summary>
 public class PotionBase : MonoBehaviour
 {
-    public int heightAmt;
+    public float heightAmt = 0.0f;
     public string mouseoverText;
-    public UIController uiCont;
+    //public UIController uiCont;
     public bool scaleUp = false;
+    UIController uiCont;
+    void Start()
+    {
+        GameObject ui = GameObject.FindGameObjectWithTag("MainUI");
+        Debug.Log(" UI Name is " + ui.name);
+        uiCont = ui.GetComponent<UIController>();
+    }
 
     void OnMouseOver()
     {
@@ -26,6 +33,7 @@ public class PotionBase : MonoBehaviour
     void OnMouseDown()
     {
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
+
         scaler.StartScaling(heightAmt, scaleUp);
     }
 }
