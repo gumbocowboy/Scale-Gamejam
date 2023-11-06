@@ -45,6 +45,9 @@ public class ObjectScaler : MonoBehaviour
             StartCoroutine(ScaleDown(objToScale, changeVector, 5f));
         }
 
+        
+         
+
     }
 
 
@@ -60,6 +63,9 @@ public class ObjectScaler : MonoBehaviour
 
         objToScale.transform.localScale = targetSize;
         GlobalVars.currentHeight += (int)scaleTo.x;
+        PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
+        potSpawner.potionSpawned = false;
+
         Destroy(this.gameObject);
 
     }
@@ -74,6 +80,8 @@ public class ObjectScaler : MonoBehaviour
 
         objToScale.transform.localScale = targetSize;
         GlobalVars.currentHeight -= (int)scaleTo.x;
+        PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
+        potSpawner.potionSpawned = false;
         Destroy(this.gameObject);
 
     }

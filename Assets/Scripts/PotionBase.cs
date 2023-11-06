@@ -4,8 +4,10 @@ using UnityEngine;
 
 
 /// <summary>
-/// The base script to be attached to all Potions
+/// The base script to be attached to all Potions objects.
 /// </summary>
+/// 
+[RequireComponent(typeof(ObjectScaler))]
 public class PotionBase : MonoBehaviour
 {
     public float heightAmt = 0.0f;
@@ -32,6 +34,7 @@ public class PotionBase : MonoBehaviour
 
     void OnMouseDown()
     {
+        
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
 
         scaler.StartScaling(heightAmt, scaleUp);
