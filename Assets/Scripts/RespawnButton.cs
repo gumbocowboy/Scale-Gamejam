@@ -10,7 +10,12 @@ namespace Assets.Scripts
         UIController uiCont;
         GameObject[] potionSpawns;
         GameObject playerSpawnPoint;
+        GameObject playerObj;
         public string mouseoverText;
+        public float startingHeight;
+        public float startingStep;
+
+
         // Use this for initialization
         void Start()
         {
@@ -34,18 +39,35 @@ namespace Assets.Scripts
 
         void OnMouseDown()
         {
-            foreach(GameObject pot in potionSpawns)
+            RespawnPotions();
+            /*            LevelStart spawner = playerSpawnPoint.GetComponent<LevelStart>();
+                        spawner.SpawnPlayer();*/
+            ResetPlayer();
+        }
+
+        void RespawnPotions()
+        {
+            foreach (GameObject pot in potionSpawns)
             {
-                
+
                 PotionSpawner spawn = pot.GetComponent<PotionSpawner>();
-                if(spawn.potionSpawned == false)
+                if (spawn.potionSpawned == false)
                 {
                     spawn.SpawnPotions();
 
                 }
             }
-            LevelStart spawner = playerSpawnPoint.GetComponent<LevelStart>();
-            spawner.SpawnPlayer();
+        }
+        
+        void ResetPlayer()
+        {
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+            Vector3 startSize = new Vector3(startingHeight, startingHeight, startingHeight);
+            playerObj.transform.localScale = startSize;
+            //playerObj.transform.position = gameObject.transform.position;
+            CharacterController cont = playerObj.GetComponent<CharacterController>();
+            cont.stepOffset = startingStep;
         }
     }
+
 }
