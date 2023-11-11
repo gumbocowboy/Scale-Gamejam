@@ -79,6 +79,13 @@ public class ObjectScaler : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         objToScale.transform.localScale = targetSize;
+        
+        
+        
+        CharacterController cont = objToScale.GetComponent<CharacterController>();
+        //cont.stepOffset = cont.stepOffset - .50f;
+       
+        cont.stepOffset = .25f;
         GlobalVars.currentHeight -= (int)scaleTo.x;
         PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
         potSpawner.potionSpawned = false;
