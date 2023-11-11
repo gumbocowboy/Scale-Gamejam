@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         UIController uiCont;
         GameObject[] potionSpawns;
+        GameObject playerSpawnPoint;
         public string mouseoverText;
         // Use this for initialization
         void Start()
@@ -17,6 +18,7 @@ namespace Assets.Scripts
             Debug.Log(" UI Name is " + ui.name);
             uiCont = ui.GetComponent<UIController>();
             potionSpawns = GameObject.FindGameObjectsWithTag("PotionSpawn");
+            playerSpawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
         }
 
 
@@ -42,6 +44,8 @@ namespace Assets.Scripts
 
                 }
             }
+            LevelStart spawner = playerSpawnPoint.GetComponent<LevelStart>();
+            spawner.SpawnPlayer();
         }
     }
 }

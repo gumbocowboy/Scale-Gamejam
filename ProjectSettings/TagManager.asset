@@ -9,6 +9,7 @@ TagManager:
   - Moveables
   - MainUI
   - PotionSpawn
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class LevelStart: MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    GameObject playerObj;
+    public float startingHeight;
+    public float startingStep;
 
-    // Update is called once per frame
-    void Update()
+
+
+
+    public void SpawnPlayer()
     {
-        
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        Vector3 startSize = new Vector3(startingHeight, startingHeight, startingHeight);
+        playerObj.transform.localScale = startSize;
+        //playerObj.transform.position = gameObject.transform.position;
+        CharacterController cont = playerObj.GetComponent<CharacterController>();
+        cont.stepOffset = startingStep;
+
     }
 }
