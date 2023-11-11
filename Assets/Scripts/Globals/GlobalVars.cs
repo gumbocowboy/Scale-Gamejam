@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GlobalVars : MonoBehaviour
 {
-    public static int currentHeight = 6;
-
+    public static float currentHeight = 163;
 
 
 }

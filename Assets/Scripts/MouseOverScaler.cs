@@ -35,14 +35,14 @@ public class MouseOverScaler : MonoBehaviour
 
     void OnMouseDown()
     {
-        objScale = this.GetComponent<ObjectScaler>();
+ /*       objScale = this.GetComponent<ObjectScaler>();
         //objScale.changeVector = new Vector3(objScale.sizeChange, objScale.sizeChange, objScale.sizeChange);
 
 
 
         Debug.Log("Mouse down on " + this.gameObject.name);
         objScale.StartScaling();
-        //StartCoroutine(objScale.ScaleUp(objScale.objToScale, objScale.changeVector, 5f));
+        //StartCoroutine(objScale.ScaleUp(objScale.objToScale, objScale.changeVector, 5f));*/
 
 
     }
