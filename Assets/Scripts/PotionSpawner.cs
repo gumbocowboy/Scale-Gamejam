@@ -25,7 +25,6 @@ public class PotionSpawner : MonoBehaviour
 
     public void SpawnPotions()
     {
-    //Instantiate(potionToSpawn, transform.position, Quaternion.identity);
         var newpot = Instantiate(potionToSpawn);
         newpot.transform.parent = gameObject.transform;
         newpot.transform.position = gameObject.transform.position;

@@ -37,6 +37,7 @@ public class PotionBase : MonoBehaviour
     {
         
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
+        uiCont.HideMouseOver();
 
         scaler.StartScaling(heightAmt, scaleUp);
     }
