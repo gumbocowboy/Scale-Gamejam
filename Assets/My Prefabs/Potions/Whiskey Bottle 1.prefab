@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 492105566409215504}
   - component: {fileID: 381861874142854929}
   - component: {fileID: 492105566409215502}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Whiskey Bottle 1
   m_TagString: Potions
   m_Icon: {fileID: 0}

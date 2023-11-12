@@ -15,15 +15,16 @@ public class PotionBase : MonoBehaviour
     //public UIController uiCont;
     public bool scaleUp = false;
     UIController uiCont;
-    void Start()
+    void Awake()
     {
         GameObject ui = GameObject.FindGameObjectWithTag("MainUI");
         Debug.Log(" UI Name is " + ui.name);
         uiCont = ui.GetComponent<UIController>();
     }
 
-    void OnMouseOver()
+    public void MouseOver()
     {
+        Debug.Log("Moused");
         uiCont.ShowMouseOver(mouseoverText);    
     }
 
@@ -38,5 +39,10 @@ public class PotionBase : MonoBehaviour
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
 
         scaler.StartScaling(heightAmt, scaleUp);
+    }
+
+    public void GetUI()
+    {
+
     }
 }

@@ -2,7 +2,10 @@
 using UnityEngine;
 
 
-
+/// <summary>
+/// Checks range from camera to Gameobject via Raycast.
+/// Should be attached to Player Object.
+/// </summary>
 public class RangeFinder : MonoBehaviour
 {
     public float maxDistance = 5f;
@@ -19,7 +22,8 @@ public class RangeFinder : MonoBehaviour
             {
                 if(hit.collider.gameObject.tag == "Potions")
                 {
-                    Debug.Log("Potion");
+                    PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
+                    potionBase.MouseOver();
                 }
 
                 if (hit.collider.gameObject.tag == "Moveables")
