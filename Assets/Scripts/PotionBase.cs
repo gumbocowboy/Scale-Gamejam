@@ -18,32 +18,20 @@ public class PotionBase : MonoBehaviour
     void Awake()
     {
         GameObject ui = GameObject.FindGameObjectWithTag("MainUI");
-        Debug.Log(" UI Name is " + ui.name);
         uiCont = ui.GetComponent<UIController>();
     }
 
     public void MouseOver()
     {
-        Debug.Log("Moused");
         uiCont.ShowMouseOver(mouseoverText);    
     }
 
-    void OnMouseExit()
-    {
-        uiCont.HideMouseOver();
-    }
 
-    void OnMouseDown()
+    public void UsePotion()
     {
-        
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
         uiCont.HideMouseOver();
 
         scaler.StartScaling(heightAmt, scaleUp);
-    }
-
-    public void GetUI()
-    {
-
     }
 }

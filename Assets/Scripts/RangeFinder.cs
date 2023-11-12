@@ -9,12 +9,12 @@ using UnityEngine;
 public class RangeFinder : MonoBehaviour
 {
     public float maxDistance = 5f;
+    RaycastHit hit;
 
     // Update is called once per frame
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
         
         if(Physics.Raycast(ray, out hit, maxDistance))
         {
@@ -22,8 +22,12 @@ public class RangeFinder : MonoBehaviour
             {
                 if(hit.collider.gameObject.tag == "Potions")
                 {
-                    PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
-                    potionBase.MouseOver();
+                    PotionInteract();
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
+                        potionBase.UsePotion();
+                    }
                 }
 
                 if (hit.collider.gameObject.tag == "Moveables")
@@ -33,5 +37,11 @@ public class RangeFinder : MonoBehaviour
 
             }
         }
+    }
+
+    public void PotionInteract()
+    {
+        PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
+        potionBase.MouseOver();
     }
 }
