@@ -7,6 +7,7 @@ public class GlobalVars : MonoBehaviour
 
 
     public static float currentHeight = 163;
+    public static bool activeScaling = false;
 
 
 

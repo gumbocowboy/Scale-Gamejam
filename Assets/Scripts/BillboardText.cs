@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// When attached to a GameObject, it will face the Main Camera at all times. Used for text.
+/// </summary>
 public class BillboardText : MonoBehaviour
 {
 

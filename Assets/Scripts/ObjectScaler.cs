@@ -79,7 +79,7 @@ public class ObjectScaler : MonoBehaviour
         GlobalVars.currentHeight += (int)scaleTo.x;
         PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
         potSpawner.potionSpawned = false;
-
+        GlobalVars.activeScaling = false;
         Destroy(this.gameObject);
 
 
@@ -108,6 +108,8 @@ public class ObjectScaler : MonoBehaviour
         GlobalVars.currentHeight -= (int)scaleTo.x;
         PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
         potSpawner.potionSpawned = false;
+        GlobalVars.activeScaling = false;
+
         Destroy(this.gameObject);
 
     }

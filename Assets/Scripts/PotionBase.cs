@@ -29,6 +29,7 @@ public class PotionBase : MonoBehaviour
 
     public void UsePotion()
     {
+        GlobalVars.activeScaling = true;
         ObjectScaler scaler = this.GetComponent<ObjectScaler>();
         uiCont.HideMouseOver();
 

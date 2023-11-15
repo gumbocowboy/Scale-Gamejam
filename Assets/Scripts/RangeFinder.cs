@@ -23,7 +23,7 @@ public class RangeFinder : MonoBehaviour
                 if(hit.collider.gameObject.tag == "Potions")
                 {
                     PotionInteract();
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && GlobalVars.activeScaling == false)
                     {
                         PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
                         potionBase.UsePotion();
