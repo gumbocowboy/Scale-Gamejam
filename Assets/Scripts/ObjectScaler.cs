@@ -12,12 +12,13 @@ public class ObjectScaler : MonoBehaviour
     
 
     Vector3 changeVector;
+    Vector3 newsize;
 
-    Vector3 currentSize;
+    Vector3 startSize;
     Vector3 targetSize;  
     Vector3 sizeDiff;
 
-    float smoothSpeed = 0.3f;
+    float smoothSpeed = 10f;
     void Start()
     {
         /*        sizeDiff = new Vector3(sizeChange, sizeChange, sizeChange);
@@ -33,15 +34,19 @@ public class ObjectScaler : MonoBehaviour
 
     public void StartScaling(float scaleAmt, bool scaleUp)
     {
-
+        startSize = objToScale.transform.localScale;
         changeVector = new Vector3(scaleAmt,scaleAmt,scaleAmt);
 
         if (scaleUp)
         {
+            newsize = startSize += changeVector;
+
             StartCoroutine(ScaleUp(objToScale, changeVector, 5f));
         }
         else
         {
+            newsize = startSize -= changeVector;
+
             StartCoroutine(ScaleDown(objToScale, changeVector, 5f));
         }
 
@@ -56,17 +61,27 @@ public class ObjectScaler : MonoBehaviour
     public IEnumerator ScaleUp(GameObject obj, Vector3 scaleTo, float seconds)
     {
 
-        Vector3 startScale = objToScale.transform.localScale;
-        Vector3 targetSize = startScale += scaleTo;
- 
-        yield return new WaitForEndOfFrame();
+        Vector3 targetSize = startSize += scaleTo;
 
-        objToScale.transform.localScale = targetSize;
+        float elapsedTime = 0f;
+
+        while(elapsedTime < 1f)
+        {
+            Debug.Log("Hitting Smooth Scaler");
+            objToScale.transform.localScale = Vector3.Lerp(startSize, newsize, elapsedTime);
+            elapsedTime += Time.deltaTime * smoothSpeed;
+            yield return null;
+
+        }
+
+
+        objToScale.transform.localScale = newsize;
         GlobalVars.currentHeight += (int)scaleTo.x;
         PotionSpawner potSpawner = this.GetComponentInParent<PotionSpawner>();
         potSpawner.potionSpawned = false;
 
         Destroy(this.gameObject);
+
 
     }
 
@@ -76,9 +91,13 @@ public class ObjectScaler : MonoBehaviour
         Vector3 startScale = objToScale.transform.localScale;
         Vector3 targetSize = startScale -= scaleTo;
 
+       // Vector3 slowedScale = Vector3.Lerp(startScale, targetSize, smoothSpeed);
+
+
+
         yield return new WaitForEndOfFrame();
 
-        objToScale.transform.localScale = targetSize;
+        objToScale.transform.localScale = newsize;
         
         
         
@@ -92,5 +111,7 @@ public class ObjectScaler : MonoBehaviour
         Destroy(this.gameObject);
 
     }
+
+
 
 }
