@@ -8,23 +8,20 @@ using UnityEngine;
 public class MoveableBase : MonoBehaviour
 {
     public string itemName;
-    public int requiredHeight;
+    public float requiredHeight;
     public string mouseoverText;
-    public UIController uiCont;
+    UIController uiCont;
 
-    void OnMouseOver()
+    private void Awake()
     {
-        uiCont.ShowMouseOver(mouseoverText);
+        GameObject ui = GameObject.FindGameObjectWithTag("MainUI");
+        uiCont = ui.GetComponent<UIController>();
     }
 
-    void OnMouseExit()
-    {
-        uiCont.HideMouseOver();
-    }
 
-    void OnMouseDown()
+    public void Interact()
     {
-        if(GlobalVars.currentHeight == requiredHeight)
+        if(GlobalVars.currentHeight >= requiredHeight)
         {
             Debug.Log("WOW");
         }

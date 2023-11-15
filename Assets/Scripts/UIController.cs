@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour
         mouseoverPanel.SetActive(false);
     }
 
-    public void ShowWrongSize(int size)
+    public void ShowWrongSize(float size)
     {
         TextMeshProUGUI tmp = warningPanel.GetComponentInChildren<TextMeshProUGUI>();
         tmp.text = ("You must be " + size + "' to use this.");

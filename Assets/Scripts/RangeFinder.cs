@@ -18,6 +18,7 @@ public class RangeFinder : MonoBehaviour
         
         if(Physics.Raycast(ray, out hit, maxDistance))
         {
+            //If object is Interactable
             if(hit.collider.gameObject.layer == 3)
             {
                 if(hit.collider.gameObject.tag == "Potions")
@@ -32,7 +33,10 @@ public class RangeFinder : MonoBehaviour
 
                 if (hit.collider.gameObject.tag == "Moveables")
                 {
-                    Debug.Log("Moveab");
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        MoveableInteract();
+                    }
                 }
 
             }
@@ -43,5 +47,11 @@ public class RangeFinder : MonoBehaviour
     {
         PotionBase potionBase = hit.collider.gameObject.GetComponent<PotionBase>();
         potionBase.MouseOver();
+    }
+
+    public void MoveableInteract()
+    {
+        MoveableBase moveBase = hit.collider.gameObject.GetComponent<MoveableBase>();
+        moveBase.Interact();
     }
 }
